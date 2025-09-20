@@ -60,6 +60,15 @@ voice_assistant:
   microphone: board_microphone
   speaker: board_external_speakers
   use_wake_word: true
+  conversation_timeout: 600s
+  on_listening:
+    - light.turn_on:
+        id: top_led
+        blue: 100%
+        red: 0%
+        green: 0%
+        brightness: 100%
+        effect: pulse
   on_start:
     - light.turn_on:
         id: board_led
